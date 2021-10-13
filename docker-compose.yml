@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  db-pg:
+    image: postgres:latest
+    container_name: db-pg
+    ports: 
+      - "5432:5432"
+    restart: on-failure
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_DB: "postgres"
+
+  webapptest:
+    image: ${DOCKER_REGISTRY-}webapptest
+    depends_on:
+      - "db-pg"
+    build:
+      context: .
+      dockerfile: WebAppTest/Dockerfile
+    ports:
+      - "8082:8082"

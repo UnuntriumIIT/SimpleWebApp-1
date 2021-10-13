@@ -1,6 +1,5 @@
 FROM mcr.microsoft.com/dotnet/runtime:5.0 AS base
 WORKDIR /app
-EXPOSE 8082/tcp
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
