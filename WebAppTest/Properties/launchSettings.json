@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "WebAppTest": {
+      "applicationUrl": "http://0.0.0.0:8082/",
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
